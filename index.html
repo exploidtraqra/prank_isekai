@@ -1,0 +1,142 @@
+<!--
+   AUTHOR : RYUGENXD
+   ECODING : WIBUCODE 
+   
+   
+   EMMM.... CARI APA BNH DI SINI GA ADA YANG ISTIMEWAH LHO 
+   
+   /////////////////////////////////////////////////////////
+   
+   JASA BUAT SCRIPT HTML 
+   
+   WA : 081340662711
+-->
+<!Doctype htnl>
+<html>
+	<head>
+		<meta name='viewport' content='width=device-width,initial-scale=1.0,user-scalable=no'>
+		<title>GO TO ANIME WORLD </title>
+		<style>
+			html body{
+				background:black;
+				margin:0;
+				color:white;
+				font-family:"monospace";
+				width:100%;
+				height:100vh;
+				font-weight:bold;
+			}
+			.center{
+				display:flex;
+				align-items:center;
+	            justify-content:center;
+	            align-content:center;
+			}
+			.clock{
+				font-size:40px;
+				margin-top:50%;
+				/*border: 2px solid hsl(100,100%,50%);*/
+			}
+			.title{
+				position: absolute;
+				font-size:30px;
+			}
+			.enter{
+				position:absolute;
+				top:60%;
+				font-size:50px;
+				border:2px solid white;
+				font-weight:bold;
+			}
+			.enter:hover{
+				position:absolute;
+				top:60%;
+				font-size:70px;
+				border:2px solid white;
+				font-weight:bold;
+			}
+			.loli{
+				width:100px;
+				height:100px;
+				position:absolute;
+				z-index:-1;
+				top:40%;
+			}
+			.aaa{
+				position: absolute;
+				z-index:2;
+				top:2%;
+				display:none;
+			}
+			h1.isekai{
+				color:white;
+				display:none;
+				-webkit-text-stroke: 2px black;
+				font-weight:bold;
+				font-size:60px;
+				z-index:3;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<p class='ry'></p>
+		<div class="center">
+		<div class='clock'></div>
+		<div class='title'></div>
+		<div class='enter'>ENTER</div>
+		<img class='loli' src='https://c.tenor.com/aYuC_xrp_csAAAAS/glowing-z-letter-z.gif'></img>
+		<img class='aaa' width="100%" height="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmrpFSG_ew6w-tKvT92WyiwPYd_RkuCdtkA&usqp=CAU"></img>
+		<h1 class='isekai'>AAAAA... Mau ke isekai ya...</h1>
+		</div>
+		<script>
+			const title = document.querySelector('.title');
+			const ry = document.querySelector('.ry');
+			const aa = document.querySelector('.aaa');
+			const ise = document.querySelector('.isekai');
+			const enter = document.querySelector('.enter');
+			const welcome = "WELCOME TO THE ANIME WORLD";
+			let i = 0;
+			let second = 70;
+			let colors = 0;
+			let colors1 = 0;
+			let xd = 80;
+			let z = 0;
+			const isekai = new Audio('isekai.mp3');
+			enter.addEventListener("click",()=>{
+				aa.style.display="block";
+				ise.style.display="block";
+				isekai.play();
+            });
+			const Author = "@ryugenXD";
+			function lets(){
+				ry.innerHTML+=Author.charAt(z);
+				z++;
+				if(z>Author.lenth){
+						z=0;
+				}
+			}
+			setInterval(lets,xd);
+			function typing(){
+				colors+=15;
+				colors1-=15;
+				document.querySelector('.clock').style.border="2px solid hsl("+colors+",100%,50%)";
+				title.style.color="hsl("+colors+",100%,50%)";
+				enter.style.color="hsl("+colors1+",100%,50%)";
+				if(i < welcome.length){
+					title.innerHTML+=welcome.charAt(i);
+					i++;
+					if(i > welcome.length){
+						i=0;
+					}
+				}
+			}
+			setInterval(typing,second);
+			setInterval(()=>{
+				let date = new Date();
+			    let clock = document.querySelector('.clock');
+				clock.innerHTML=date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+            },30);
+		</script>
+	</body>
+</html>
